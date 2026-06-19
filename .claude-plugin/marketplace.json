@@ -1,0 +1,21 @@
+{
+  "name": "claude-blog-prose",
+  "owner": {
+    "name": "Sean Moran",
+    "email": "sean.j.moran@gmail.com"
+  },
+  "metadata": {
+    "description": "Clear, honest blog prose — a plain first-person voice, no-hype rules that strip rhetorical and marketing constructions, no-self-sabotage rules against the imposter voice, and a checkable-claims rule that keeps every factual claim verifiable in under a minute",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "blog-prose",
+      "description": "Voice, no-hype, no-self-sabotage, and checkable-claims rules for blog posts and public web prose, with a mandatory pre-publish self-check",
+      "source": "./",
+      "skills": [
+        "./skills/blog-prose"
+      ]
+    }
+  ]
+}
