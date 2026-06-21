@@ -7,11 +7,12 @@ description: Rules for writing, revising, or reviewing blog posts and other publ
 
 This skill ports the academic-prose voice to the blog. It keeps the parts that travel — the refusal to put rhetoric ahead of substance, and the habit of making claims checkable — and relaxes the academic machinery (no abstract word limits, no claims box, no "the remainder of this post is structured as follows", no Protocol paragraphs). A blog post should read like a clear person talking, not like a paper with the formatting filed off.
 
-Four rule sets, applied in this order whenever blog prose is written or edited:
+Five rule sets, applied in this order whenever blog prose is written or edited:
 1. **Voice** — plain, first-person, conversational but precise (§1).
 2. **No hype** — strip constructions that put rhetoric ahead of substance (§2). Kept strict from the paper rules; the temptation to be punchy is higher on a blog, not lower.
 3. **No self-sabotage** — keep every fact and caveat, but never word the work down more than it deserves (§2b).
-4. **Claims are checkable** — when a claim is empirical or factual, make it easy to verify (§3). This is evaluability, relaxed for the web.
+4. **No rhetorical-question scaffolding** — state the argument; don't keep prompting the reader with questions (§2c).
+5. **Claims are checkable** — when a claim is empirical or factual, make it easy to verify (§3). This is evaluability, relaxed for the web.
 
 Then run the **pre-publish self-check** (§4) before calling a post done. If an instruction in the conversation conflicts with a rule here, flag the conflict rather than silently overriding.
 
@@ -64,6 +65,25 @@ Rewrite on sight:
 
 Read-aloud test: any sentence that makes you sound less competent or your result less real than it actually is, where a neutral rephrasing would fix it *without changing a single fact or dropping a caveat*, gets rephrased.
 
+## 2c. No rhetorical-question scaffolding (mandatory)
+
+A blog post can use an occasional genuine question — especially in the opening, if it frames the problem naturally — but repeated question-answer structures are a strong LLM tell. They give prose an "AI explainer" rhythm: the writing keeps prompting the reader instead of stating the argument cleanly. Prefer declarative statements.
+
+Rewrite on sight. Examples:
+
+- Bad: "Residualisation is useful when the question is: what does this add on top of what I already know?" → Good: "Residualisation is useful for estimating incremental contribution."
+- Bad: "The first residual asks: what part of price is not explained by square footage?" → Good: "The first residual is the part of price not explained by square footage."
+- Bad: "Is this model layered on top of another model, or is it the whole prediction system?" → Good: "The decision depends on whether the model is layered on top of another model or whether it is the whole prediction system."
+- Bad: "So if the question is 'how accurately can I predict house prices?', I would first try a joint model." → Good: "For house-price prediction, I would first try a joint model."
+
+Guidance:
+
+- Permit at most one or two genuine questions in a post, and only when they are doing real conceptual work.
+- Do not use questions as section openings by default.
+- Do not use repeated "the question is…" phrasing.
+- Do not set up a paragraph by asking a question and immediately answering it, unless the question is genuinely useful.
+- Prefer direct claims: "This estimates…", "This separates…", "This fails when…", "The decision depends on…".
+
 ## 3. Claims are checkable (mandatory — evaluability, relaxed for the web)
 
 A blog reader who hits an unsupported claim does one of two things: takes it on faith, or stops trusting you. Make the claim checkable instead. This is the paper's evaluability rule with the formal machinery removed — no numbered claims box, no one-protocol-per-table, no abstract word count. The spirit stays: a reader should be able to verify any claim that matters in well under a minute.
@@ -83,10 +103,11 @@ A blog reader who hits an unsupported claim does one of two things: takes it on 
    a. Mechanical: grep for em-dashes (look for chains and nested pairs, not single appositives), intensifier adverbs, the hype-vocabulary list (§2), and the LLM-tell metaphors ("load.?bearing", "linchpin", "cornerstone", "heavy lifting", "delve", "in the realm of", "it's worth noting"); count and justify every remaining instance — the justified count should be zero.
    b. Semantic: greps can't catch inversions, pivots, triadic fragments, clickbait titles, keynote sentences, or marketing register. Read every sentence and every heading for them. For a long post, run this as a fresh-context pass — hand the full draft and the §2 ban list to a subagent and have it return line-numbered violations with flat rewrites — then apply the fixes. Never report this item as PASS on the strength of stage (a) alone.
 4. Self-sabotage sweep (§2b): scan for the imposter preamble, false modesty, self-deprecating verbs on neutral outcomes, and hedges on things you actually measured. Reframe each neutrally while keeping every fact and caveat. Re-read the opening and the closing specifically — those set and leave the impression.
-5. Title check: does it say what the post is about (and ideally what you found), without clickbait or empty aphorism?
-6. Formatting check: bold and lists used for genuine emphasis/structure, not sprayed for energy. No bolded full sentences, no bulleted paragraphs.
-7. Opinion/measurement check: every "I think"-class statement is marked as a view; every measurement has its evidence. Neither is disguised as the other.
-8. Spelling consistent with the chosen variant throughout — no mixing.
+5. Rhetorical question sweep (§2c): count every question mark and every phrase like "the question is", "asks whether", "what does X add", "what remains", "why does this matter". Keep only questions that a human author would naturally ask. Rewrite all scaffolding questions as declarative claims.
+6. Title check: does it say what the post is about (and ideally what you found), without clickbait or empty aphorism?
+7. Formatting check: bold and lists used for genuine emphasis/structure, not sprayed for energy. No bolded full sentences, no bulleted paragraphs.
+8. Opinion/measurement check: every "I think"-class statement is marked as a view; every measurement has its evidence. Neither is disguised as the other.
+9. Spelling consistent with the chosen variant throughout — no mixing.
 
 Report the outcome of this checklist to the user explicitly — pass/fail per item — before calling the post finished.
 
