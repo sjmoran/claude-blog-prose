@@ -7,12 +7,13 @@ description: Rules for writing, revising, or reviewing blog posts and other publ
 
 This skill ports the academic-prose voice to the blog. It keeps the parts that travel — the refusal to put rhetoric ahead of substance, and the habit of making claims checkable — and relaxes the academic machinery (no abstract word limits, no claims box, no "the remainder of this post is structured as follows", no Protocol paragraphs). A blog post should read like a clear person talking, not like a paper with the formatting filed off.
 
-Five rule sets, applied in this order whenever blog prose is written or edited:
+Six rule sets, applied in this order whenever blog prose is written or edited:
 1. **Voice** — plain, first-person, conversational but precise (§1).
 2. **No hype** — strip constructions that put rhetoric ahead of substance (§2). Kept strict from the paper rules; the temptation to be punchy is higher on a blog, not lower.
 3. **No self-sabotage** — keep every fact and caveat, but never word the work down more than it deserves (§2b).
 4. **No rhetorical-question scaffolding** — state the argument; don't keep prompting the reader with questions (§2c).
-5. **Claims are checkable** — when a claim is empirical or factual, make it easy to verify (§3). This is evaluability, relaxed for the web.
+5. **Calm, measured register** — descriptive titles, proportionate claims, no manufactured drama or "breakthrough" framing; a grounded technical essay, not a promotional explainer (§2d).
+6. **Claims are checkable** — when a claim is empirical or factual, make it easy to verify (§3). This is evaluability, relaxed for the web.
 
 Then run the **pre-publish self-check** (§4) before calling a post done. If an instruction in the conversation conflicts with a rule here, flag the conflict rather than silently overriding.
 
@@ -84,6 +85,43 @@ Guidance:
 - Do not set up a paragraph by asking a question and immediately answering it, unless the question is genuinely useful.
 - Prefer direct claims: "This estimates…", "This separates…", "This fails when…", "The decision depends on…".
 
+## 2d. Calm, measured register (mandatory for technical essays)
+
+§2 strips the loudest hype; this rule governs the quieter sensationalism that creeps into technical writing — dramatic section titles, "breakthrough" framing, manufactured suspense, and inflated historical claims. The target voice is a technically competent practitioner explaining a mechanism carefully: grounded, precise, readable, modest about claims, clear about limitations. Not dull — clear and engaging — but never breathless, punchline-driven, suspenseful, or artificially contrarian. The aim is a measured technical essay, not a promotional explainer, a Twitter thread, or an AI-generated piece trying to manufacture excitement. This applies by default to all blog posts, and especially to Medium/TDS-style AI, ML, RL, and practitioner essays.
+
+**Section titles describe; they do not tease.** A heading tells the reader what the section explains; it does not create artificial suspense. Rewrite dramatic, journalistic, or punchy titles into descriptive ones:
+- "The wall: argmax over a continuous action" → "Why continuous actions are difficult for value-based RL"
+- "DDPG's trick" → "Using an actor to choose continuous actions"
+- "The part retrospectives skip" → "Reproducibility and implementation sensitivity"
+- "Does it deserve the award?" → "Why the method remains influential"
+- "Why this changes everything" → "How the method works"
+- "The hidden problem" → "Where the approach is limited"
+
+**Avoid sensational or inflated phrasing.** Replace on sight (keep the explanation, drop the rhetorical force):
+- "closed that gap" → "addressed this problem"
+- "the wall" → "the difficulty"
+- "the trick" → "the central move"
+- "the hidden flaw" / "the part everyone misses" → "an often underemphasised point"
+- "a resounding yes" → "yes, on the basis of influence"
+- "dead end" → "does not scale well"
+- "breakthrough" → "important contribution"
+- "changed everything" / "revolutionised" → "helped establish"
+- "all it could do was…" → "was limited to…"
+
+**Frame a method as solving a specific technical problem, not as a heroic leap.**
+- Bad: "DDPG broke through the wall that stopped DQN from controlling robots." Better: "DDPG adapted DQN-style value learning to continuous-control settings by adding a deterministic actor that proposes the action directly."
+- Bad: "TD3 and SAC fixed what DDPG got wrong." Better: "TD3 and SAC are easier to understand as later methods that retained DDPG's off-policy actor–critic structure while addressing specific sources of instability."
+
+**Keep importance claims proportionate.** Distinguish, and do not let one imply another: importance at the time, current practical usefulness, influence on later methods, benchmark performance, reproducibility. Do not imply an influential method is still the best today unless that is explicitly true.
+- Preferred: "DDPG matters less because it remains the default algorithm today, and more because it established a template that later methods refined."
+- Avoid: "DDPG changed reinforcement learning forever."
+
+**Use calm transitions.** Drop the rhetorical pivot — "But here's the problem.", "The real issue is…", "This is where everything breaks.", "And that is the key insight." Prefer plain connectives: "The difficulty is…", "This creates a practical problem…", "The next step is…", "This is where the actor becomes useful.", "The limitation is worth making explicit."
+
+**Do not lean on question-structure** (reinforces §2c): a few genuine questions are fine, but avoid headings and openers like "So what does this mean?", "Why does this matter?", "What happens next?", "Is this enough?". Prefer declarative headings and topic sentences.
+
+Read-aloud test: if a sentence or heading sounds suspenseful, contrarian for effect, or like a punchline, flatten it. Strong explanation stays; rhetorical force goes.
+
 ## 3. Claims are checkable (mandatory — evaluability, relaxed for the web)
 
 A blog reader who hits an unsupported claim does one of two things: takes it on faith, or stops trusting you. Make the claim checkable instead. This is the paper's evaluability rule with the formal machinery removed — no numbered claims box, no one-protocol-per-table, no abstract word count. The spirit stays: a reader should be able to verify any claim that matters in well under a minute.
@@ -102,6 +140,7 @@ A blog reader who hits an unsupported claim does one of two things: takes it on 
 3. Banned-construction check — TWO stages, both mandatory:
    a. Mechanical: grep for em-dashes (look for chains and nested pairs, not single appositives), intensifier adverbs, the hype-vocabulary list (§2), and the LLM-tell metaphors ("load.?bearing", "linchpin", "cornerstone", "heavy lifting", "delve", "in the realm of", "it's worth noting"); count and justify every remaining instance — the justified count should be zero.
    b. Semantic: greps can't catch inversions, pivots, triadic fragments, clickbait titles, keynote sentences, or marketing register. Read every sentence and every heading for them. For a long post, run this as a fresh-context pass — hand the full draft and the §2 ban list to a subagent and have it return line-numbered violations with flat rewrites — then apply the fixes. Never report this item as PASS on the strength of stage (a) alone.
+   c. Calmness pass (§2d): review every section title, caption, transition, and historical claim. Are the titles descriptive rather than dramatic? Are importance claims proportionate (importance-at-the-time vs usefulness-today vs influence)? Are limitations stated plainly? Is there any unnecessary "breakthrough", "wall", "trick", "hidden", "the part everyone misses", "changed everything", or "resounding yes" phrasing? Does the piece read as a measured technical essay rather than a promotional explainer? Replace sensational wording with the calmer alternative, keeping the explanation intact.
 4. Self-sabotage sweep (§2b): scan for the imposter preamble, false modesty, self-deprecating verbs on neutral outcomes, and hedges on things you actually measured. Reframe each neutrally while keeping every fact and caveat. Re-read the opening and the closing specifically — those set and leave the impression.
 5. Rhetorical question sweep (§2c): count every question mark and every phrase like "the question is", "asks whether", "what does X add", "what remains", "why does this matter". Keep only questions that a human author would naturally ask. Rewrite all scaffolding questions as declarative claims.
 6. Title check: does it say what the post is about (and ideally what you found), without clickbait or empty aphorism?
@@ -113,7 +152,7 @@ Report the outcome of this checklist to the user explicitly — pass/fail per it
 
 ## One-line summary
 
-Write like a clear person talking — first person, concrete, one claim per sentence, intuition before formalism — strip every construction that puts rhetoric ahead of substance, word your work neither above nor below what it deserves, and make every claim that matters checkable in under a minute.
+Write like a clear person talking — first person, concrete, one claim per sentence, intuition before formalism — strip every construction that puts rhetoric ahead of substance, keep the register calm and measured (descriptive titles, proportionate claims, no manufactured drama), word your work neither above nor below what it deserves, and make every claim that matters checkable in under a minute.
 
 ## Relationship to academic-prose
 
