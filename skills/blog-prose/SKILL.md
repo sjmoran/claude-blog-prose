@@ -9,7 +9,7 @@ This skill ports the academic-prose voice to the blog. It keeps the parts that t
 
 Six rule sets, applied in this order whenever blog prose is written or edited:
 1. **Voice** — plain, first-person, conversational but precise (§1).
-2. **No hype** — strip constructions that put rhetoric ahead of substance (§2). Kept strict from the paper rules; the temptation to be punchy is higher on a blog, not lower.
+2. **No hype, no machine-texture** — strip constructions that put rhetoric ahead of substance (§2), and the structural tells that make clean prose still read AI-generated: em-dash density, meta-narration scaffolding, compulsive both-sides balancing, marching cadence (§2e).
 3. **No self-sabotage** — keep every fact and caveat, but never word the work down more than it deserves (§2b).
 4. **No rhetorical-question scaffolding** — state the argument; don't keep prompting the reader with questions (§2c).
 5. **Calm, measured register** — descriptive titles, proportionate claims, no manufactured drama or "breakthrough" framing; a grounded technical essay, not a promotional explainer (§2d).
@@ -122,6 +122,18 @@ Guidance:
 
 Read-aloud test: if a sentence or heading sounds suspenseful, contrarian for effect, or like a punchline, flatten it. Strong explanation stays; rhetorical force goes.
 
+## 2e. Machine-texture tells (the ones greps miss — mandatory)
+
+§2 catches word-level tells; this catches the structural ones that make clean-vocabulary prose still read machine-generated. A post can pass every banned-word grep and still feel like an AI essay because of cadence, scaffolding, density, and compulsive symmetry. None of these show up in a word search, so they have to be read for — and they are the single most common reason "it passed the checks but reads LLM".
+
+- **Em-dash density, not just chains.** §2 bans the chain; this caps the rate. Working limit: at most one em-dash per ~150 words (roughly one every three or four paragraphs). A page peppered with individually-legal single-appositive em-dashes still reads generated. Convert the rest to full stops, commas, or parentheses. Rule of thumb: if a paragraph has two em-dashes, one is wrong.
+- **No meta-narration scaffolding.** Cut the "let me tell you what I'm about to tell you" framing: "One thing worth saying plainly", "Here is the part that makes X worth reading", "The easiest way to picture it", "I'll be explicit about", "It's worth being precise about", "The thing that would…", "What this comes down to", "the thread that matters", "Two things to note". State the thing; don't announce that you're about to state it.
+- **Don't compulsively balance.** "Two things hold at once", "it cuts both ways", "the honest reading sits between the two", "on the one hand… on the other" — reflexive even-handedness is a strong tell. Take the position the evidence supports and state it; add the counterpoint only where it genuinely changes the reading, not as automatic symmetry.
+- **Break the tidy-summary cadence.** If every paragraph ends on a neat one-line moral ("…and that is the property I value", "…not a ranking I would defend"), the regularity itself reads generated. Let some paragraphs stop on a plain fact. Vary sentence length hard: a three-word sentence after a long one does more than another balanced clause.
+- **Read for march.** If consecutive sentences share a shape (subject–verb–appositive, or "It does X. It does Y. It does Z."), rewrite for irregular rhythm. Human prose is lumpier and occasionally just blurts the point.
+
+Read-aloud test: if a paragraph sounds like a well-organised essay machine that never simply says the thing, it needs roughening — fewer dashes, no throat-clearing scaffold, less symmetry, lumpier rhythm.
+
 ## 3. Claims are checkable (mandatory — evaluability, relaxed for the web)
 
 A blog reader who hits an unsupported claim does one of two things: takes it on faith, or stops trusting you. Make the claim checkable instead. This is the paper's evaluability rule with the formal machinery removed — no numbered claims box, no one-protocol-per-table, no abstract word count. The spirit stays: a reader should be able to verify any claim that matters in well under a minute.
@@ -141,6 +153,7 @@ A blog reader who hits an unsupported claim does one of two things: takes it on 
    a. Mechanical: grep for em-dashes (look for chains and nested pairs, not single appositives), intensifier adverbs, the hype-vocabulary list (§2), and the LLM-tell metaphors ("load.?bearing", "linchpin", "cornerstone", "heavy lifting", "delve", "in the realm of", "it's worth noting"); count and justify every remaining instance — the justified count should be zero.
    b. Semantic: greps can't catch inversions, pivots, triadic fragments, clickbait titles, keynote sentences, or marketing register. Read every sentence and every heading for them. For a long post, run this as a fresh-context pass — hand the full draft and the §2 ban list to a subagent and have it return line-numbered violations with flat rewrites — then apply the fixes. Never report this item as PASS on the strength of stage (a) alone.
    c. Calmness pass (§2d): review every section title, caption, transition, and historical claim. Are the titles descriptive rather than dramatic? Are importance claims proportionate (importance-at-the-time vs usefulness-today vs influence)? Are limitations stated plainly? Is there any unnecessary "breakthrough", "wall", "trick", "hidden", "the part everyone misses", "changed everything", or "resounding yes" phrasing? Does the piece read as a measured technical essay rather than a promotional explainer? Replace sensational wording with the calmer alternative, keeping the explanation intact.
+   d. Machine-texture pass (§2e): count the em-dashes (flag if more than roughly one per 150 words, or two in any paragraph) and thin them to full stops/commas; grep for the meta-narration scaffolds ("one thing worth", "the easiest way", "here is the part", "I'll be explicit", "what this comes down to", "the thing that") and cut them; check for compulsive both-sides framing ("two things at once", "cuts both ways", "sits between") and the tidy-summary-per-paragraph habit, and break both. This is the pass that stops a clean-vocabulary draft from still reading LLM; never skip it on the strength of (a).
 4. Self-sabotage sweep (§2b): scan for the imposter preamble, false modesty, self-deprecating verbs on neutral outcomes, and hedges on things you actually measured. Reframe each neutrally while keeping every fact and caveat. Re-read the opening and the closing specifically — those set and leave the impression.
 5. Rhetorical question sweep (§2c): count every question mark and every phrase like "the question is", "asks whether", "what does X add", "what remains", "why does this matter". Keep only questions that a human author would naturally ask. Rewrite all scaffolding questions as declarative claims.
 6. Title check: does it say what the post is about (and ideally what you found), without clickbait or empty aphorism?
