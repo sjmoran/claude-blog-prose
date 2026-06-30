@@ -12,7 +12,7 @@ Six rule sets, applied in this order whenever blog prose is written or edited:
 2. **No hype, no machine-texture** — strip constructions that put rhetoric ahead of substance (§2), and the structural tells that make clean prose still read AI-generated: em-dash density, meta-narration scaffolding, compulsive both-sides balancing, marching cadence (§2e).
 3. **No self-sabotage** — keep every fact and caveat, but never word the work down more than it deserves (§2b).
 4. **No rhetorical-question scaffolding** — state the argument; don't keep prompting the reader with questions (§2c).
-5. **Calm, measured register** — descriptive titles, proportionate claims, no manufactured drama or "breakthrough" framing; a grounded technical essay, not a promotional explainer (§2d).
+5. **Calm, measured register, no sensationalism** — descriptive titles, proportionate claims, no manufactured drama or "breakthrough" framing, plus the four-level anti-sensationalism pass that removes staged stakes and suspense at the sentence, paragraph, heading, and conclusion levels (§2d).
 6. **Claims are checkable** — when a claim is empirical or factual, make it easy to verify (§3). This is evaluability, relaxed for the web.
 
 Then run the **pre-publish self-check** (§4) before calling a post done. If an instruction in the conversation conflicts with a rule here, flag the conflict rather than silently overriding.
@@ -85,28 +85,11 @@ Guidance:
 - Do not set up a paragraph by asking a question and immediately answering it, unless the question is genuinely useful.
 - Prefer direct claims: "This estimates…", "This separates…", "This fails when…", "The decision depends on…".
 
-## 2d. Calm, measured register (mandatory for technical essays)
+## 2d. Calm, measured register & anti-sensationalism (mandatory for technical essays)
 
 §2 strips the loudest hype; this rule governs the quieter sensationalism that creeps into technical writing — dramatic section titles, "breakthrough" framing, manufactured suspense, and inflated historical claims. The target voice is a technically competent practitioner explaining a mechanism carefully: grounded, precise, readable, modest about claims, clear about limitations. Not dull — clear and engaging — but never breathless, punchline-driven, suspenseful, or artificially contrarian. The aim is a measured technical essay, not a promotional explainer, a Twitter thread, or an AI-generated piece trying to manufacture excitement. This applies by default to all blog posts, and especially to Medium/TDS-style AI, ML, RL, and practitioner essays.
 
-**Section titles describe; they do not tease.** A heading tells the reader what the section explains; it does not create artificial suspense. Rewrite dramatic, journalistic, or punchy titles into descriptive ones:
-- "The wall: argmax over a continuous action" → "Why continuous actions are difficult for value-based RL"
-- "DDPG's trick" → "Using an actor to choose continuous actions"
-- "The part retrospectives skip" → "Reproducibility and implementation sensitivity"
-- "Does it deserve the award?" → "Why the method remains influential"
-- "Why this changes everything" → "How the method works"
-- "The hidden problem" → "Where the approach is limited"
-
-**Avoid sensational or inflated phrasing.** Replace on sight (keep the explanation, drop the rhetorical force):
-- "closed that gap" → "addressed this problem"
-- "the wall" → "the difficulty"
-- "the trick" → "the central move"
-- "the hidden flaw" / "the part everyone misses" → "an often underemphasised point"
-- "a resounding yes" → "yes, on the basis of influence"
-- "dead end" → "does not scale well"
-- "breakthrough" → "important contribution"
-- "changed everything" / "revolutionised" → "helped establish"
-- "all it could do was…" → "was limited to…"
+The first part of this rule sets the register; the second part is the operational anti-sensationalism pass that removes drama at four levels — sentence, paragraph, heading, conclusion (run it explicitly per §4 item 3e). The target is removing unnecessary drama, not removing voice: a good opening, a stated point of view, and readable transitions all stay. Calm confidence is not blandness — a specific, checkable claim said plainly reads stronger than a staged reveal, not weaker.
 
 **Frame a method as solving a specific technical problem, not as a heroic leap.**
 - Bad: "DDPG broke through the wall that stopped DQN from controlling robots." Better: "DDPG adapted DQN-style value learning to continuous-control settings by adding a deterministic actor that proposes the action directly."
@@ -120,7 +103,48 @@ Guidance:
 
 **Do not lean on question-structure** (reinforces §2c): a few genuine questions are fine, but avoid headings and openers like "So what does this mean?", "Why does this matter?", "What happens next?", "Is this enough?". Prefer declarative headings and topic sentences.
 
-Read-aloud test: if a sentence or heading sounds suspenseful, contrarian for effect, or like a punchline, flatten it. Strong explanation stays; rhetorical force goes.
+### The four-level anti-sensationalism pass
+
+**Level 1 — sentence-level stakes phrases.** These manufacture suspense or inflate importance by *announcing* that something is interesting, hidden, surprising, key, or world-changing instead of just stating it. The announcement does no work the content can't do better. Rewrite each on sight as a plain descriptive claim (keep the explanation, drop the rhetorical force):
+
+- "the real question is" → state the question, or just answer it
+- "the key insight" / "the most interesting part" / "the surprising part" → drop the label; state the thing
+- "the hidden problem" / "the hidden flaw" / "the catch" / "the twist" / "the part everyone misses" → "the limitation is", "one problem is", "an often underemphasised point"
+- "what this really means" → "this means"
+- "this changes everything" / "revolutionised" / "the breakthrough" → name the specific change ("helped establish…", "an important contribution because…")
+- "the trick" / "the magic" / "the secret" → "the central move is", "the mechanism is"
+- "where things get interesting" → just continue; let the reader decide what's interesting
+- "why this matters" / "what happens next" → say why, or say what happens
+- "the wall" → "the difficulty"; "closed that gap" → "addressed this problem"; "a resounding yes" → "yes, on the basis of influence"; "dead end" → "does not scale well"; "all it could do was…" → "was limited to…"
+- "the future of X" / "X is dead" / "X is not enough" / "X finally works" → make the specific, checkable claim instead ("X handles Y but not Z", "X now does Y", "X is slower than Z on W")
+
+Rule of thumb: never label a point as interesting, key, hidden, surprising, or game-changing. If it is any of those, the content shows it and the label is redundant; if it isn't, the label is a lie. Either way, cut it.
+
+**Level 2 — paragraph-level suspense.** A paragraph must not be built as *setup → delayed point → punchline reveal*. State the factual point in the first sentence, then give the evidence, then add the caveat. Don't withhold the point to create a small reveal at the end.
+- Bad (setup, delay, reveal): "A tutorial example is only useful if the model is good enough to take seriously. For that, I used GIFT-Eval."
+- Better (point first): "The main benchmark here is GIFT-Eval."
+
+The good shape is: point first, evidence next, caveat if needed. The bad shape reads as a magician's pause; on a technical blog it just slows the reader down.
+
+**Level 3 — heading-level teasing.** A heading names what the section covers; it never teases a withheld payload or creates artificial suspense. If a reader can't tell from the heading what the section is about, it's teasing. Rewrite dramatic, journalistic, or punchy titles to descriptive ones:
+- "The wall: argmax over a continuous action" → "Why continuous actions are difficult for value-based RL"
+- "DDPG's trick" → "Using an actor to choose continuous actions"
+- "The part retrospectives skip" → "Reproducibility and implementation sensitivity"
+- "Why this changes everything" → "How the method works"
+- "Where the field is moving" → "Hybrid routing and ensembles"
+- "The benchmark gives the example some weight" → "GIFT-Eval benchmark setup"
+- "What t0-alpha teaches us" → "Task-level strengths and weaknesses"
+- "The hidden weakness" → "Leakage flags"
+- "The frontier" → "Simulator-trained estimators"
+- "The catch" → "Comparison with classical baselines"
+
+**Level 4 — conclusion-level grandeur.** A conclusion ends on a concrete next step or a practical takeaway, not a grand claim, a dramatic future-framing, or an inflated field-level prediction. Replace the prophecy with the specific action you'd actually take next.
+- Bad: "That is the practical frontier I would bet on." / "This is where the next weekend afternoon should go." / "The field is moving beyond architecture."
+- Better: "The next experiment I would run is a non-oracle ensemble using validation data." / "For production use, I would compare the foundation model with a tuned classical baseline and a simple router."
+
+A first-person "the next thing I'd run is X" is a stronger, more honest ending than a field-level forecast you can't check.
+
+Read-aloud test: if a sentence or heading sounds suspenseful, contrarian for effect, or like a punchline; if a sentence announces that something is interesting rather than showing it; if a paragraph saves its point for a reveal; or if the closing line is a forecast rather than a next step — flatten it to the plain claim. Strong explanation stays; rhetorical force goes.
 
 ## 2e. Machine-texture tells (the ones greps miss — mandatory)
 
@@ -154,6 +178,7 @@ A blog reader who hits an unsupported claim does one of two things: takes it on 
    b. Semantic: greps can't catch inversions, pivots, triadic fragments, clickbait titles, keynote sentences, or marketing register. Read every sentence and every heading for them. For a long post, run this as a fresh-context pass — hand the full draft and the §2 ban list to a subagent and have it return line-numbered violations with flat rewrites — then apply the fixes. Never report this item as PASS on the strength of stage (a) alone.
    c. Calmness pass (§2d): review every section title, caption, transition, and historical claim. Are the titles descriptive rather than dramatic? Are importance claims proportionate (importance-at-the-time vs usefulness-today vs influence)? Are limitations stated plainly? Is there any unnecessary "breakthrough", "wall", "trick", "hidden", "the part everyone misses", "changed everything", or "resounding yes" phrasing? Does the piece read as a measured technical essay rather than a promotional explainer? Replace sensational wording with the calmer alternative, keeping the explanation intact.
    d. Machine-texture pass (§2e): count the em-dashes (flag if more than roughly one per 150 words, or two in any paragraph) and thin them to full stops/commas; grep for the meta-narration scaffolds ("one thing worth", "the easiest way", "here is the part", "I'll be explicit", "what this comes down to", "the thing that") and cut them; check for compulsive both-sides framing ("two things at once", "cuts both ways", "sits between") and the tidy-summary-per-paragraph habit, and break both. This is the pass that stops a clean-vocabulary draft from still reading LLM; never skip it on the strength of (a).
+   e. Anti-sensationalism pass (§2d, four-level pass), four levels: (1) Sentence — grep for the stakes phrases ("the real question", "key insight", "hidden", "the surprising part", "what this really means", "the most interesting part", "changes everything", "breakthrough", "the trick", "the catch", "the twist", "the magic", "the secret", "where things get interesting", "why this matters", "what happens next", "the future of", " is dead", "is not enough", "finally works") and rewrite each as a plain descriptive claim; the justified remaining count should be zero. (2) Paragraph — confirm no paragraph is built setup → delay → reveal; move any withheld point to the first sentence. (3) Heading — every heading describes its section, none teases a payload. (4) Conclusion — the closing lines end on a concrete next step or practical takeaway, not a grand claim, dramatic future-framing, or field-level prediction.
 4. Self-sabotage sweep (§2b): scan for the imposter preamble, false modesty, self-deprecating verbs on neutral outcomes, and hedges on things you actually measured. Reframe each neutrally while keeping every fact and caveat. Re-read the opening and the closing specifically — those set and leave the impression.
 5. Rhetorical question sweep (§2c): count every question mark and every phrase like "the question is", "asks whether", "what does X add", "what remains", "why does this matter". Keep only questions that a human author would naturally ask. Rewrite all scaffolding questions as declarative claims.
 6. Title check: does it say what the post is about (and ideally what you found), without clickbait or empty aphorism?

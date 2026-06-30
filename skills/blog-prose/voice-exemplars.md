@@ -50,3 +50,32 @@ Not: "It wasn't the lock — it was serialization all along."
 > First sentence under it: "The obvious fix — a bigger cache — helped for about an hour, then the latency came back."
 
 Not: "In this section, we will discuss the reasons why the first fix did not work."
+
+## Anti-sensationalism — four levels (§2d)
+
+Sentence level — state the point, don't announce that it's interesting:
+
+> Bad: "The key insight is that the model never decodes the whole row."
+> Better: "The model never decodes the whole row."
+
+> Bad: "Here's where it gets interesting: the slow path was the logger, not the parser."
+> Better: "The slow path was the logger, not the parser."
+
+> Bad: "Transformers are not enough for long-horizon forecasting."
+> Better: "On horizons past 96 steps, the transformer's MASE was 12% worse than the seasonal-naive baseline."
+
+Paragraph level — point first, evidence next, caveat last; no staged reveal:
+
+> Bad: "A tutorial example is only worth writing if the model is good enough to take seriously. For that, I used GIFT-Eval."
+> Better: "The main benchmark here is GIFT-Eval. I picked it because it covers seven seasonal domains and reports CRPS and MASE per task."
+
+Heading level — describe the section, don't tease it:
+
+> Bad: "Where the field is moving" → Better: "Hybrid routing and ensembles"
+> Bad: "The hidden weakness" → Better: "Leakage flags"
+> Bad: "The catch" → Better: "Comparison with classical baselines"
+
+Conclusion level — close on the next concrete step, not a forecast:
+
+> Bad: "That's the practical frontier I'd bet on, and where the next weekend afternoon should go."
+> Better: "The next experiment I'd run is a non-oracle ensemble that picks per-task weights on validation data. For production I'd compare the foundation model against a tuned seasonal baseline and a simple router before committing to either."
