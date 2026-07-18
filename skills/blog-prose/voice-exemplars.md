@@ -83,6 +83,12 @@ Headings that narrate the piece on their own:
 
 Not (headings that tease or ask): "The magic of bloom filters" → "But there's a catch…" → "So how big should it be?"
 
+Split vs keep — a long paragraph is a flag, not a verdict. Split when it bundles separable concepts a reader would navigate between; keep it when the sentences are one argument building to a single claim.
+
+> Split (a definition with a roster stuck on the end — two concepts): "A bloom filter tests set membership with one-sided error… [4 sentences of definition]. The idea shows up all over: Bigtable uses it to skip disk reads, Chrome used it for its malware blocklist, and most CDNs cache-filter with it." → definition in one paragraph, the where-it's-used roster in its own.
+
+> Keep (one argument, three pieces of evidence for a single claim — don't split): "A bloom filter never stores the items themselves, and that single fact explains all of its behaviour. It's why the memory is a few megabytes instead of gigabytes, since it holds bits not strings. It's why it can't enumerate its members or delete one, because there's nothing to enumerate or remove. And it's why the error is one-sided: with no stored item to compare against, a set bit can't tell a real member from a coincidence." Splitting this into four slivers severs the "one fact explains everything" thread and manufactures the §2e march.
+
 ## Anti-sensationalism — four levels (§2d)
 
 Sentence level — state the point, don't announce that it's interesting:
