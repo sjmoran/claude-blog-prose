@@ -28,14 +28,15 @@ Same facts. One sells; one informs. The second is shorter, says what actually ha
 
 ## What it enforces
 
-Four rule sets, applied in order, then a pre-publish self-check:
+The headline rule sets, applied in order (the skill also carries the calm-register, anti-scaffolding, and machine-texture passes), then a pre-publish self-check:
 
 | Rule set | What it does |
 |---|---|
 | **1. Voice** | Plain, first-person, precise. Open on the concrete thing. Show the artifact. Mark opinion as opinion. Structure by descriptive headings, not "in this section we…". |
-| **2. No hype** *(kept strict)* | Bans em-dash chains, rhetorical inversion, the "not X — it's Y" pivot, triadic drama, clickbait/aphoristic titles, intensifier adverbs, hype vocabulary, and "load-bearing"-style LLM-tell metaphors. |
-| **3. No self-sabotage** | The opposite failure: the imposter preamble ("I'm no expert but…"), false modesty, hedging a result you actually measured. Keep every caveat; never word the work down below what it deserves. |
-| **4. Claims are checkable** | Every empirical or factual claim that matters is verifiable in under a minute — a linked source, a number, code, or a chart. Don't blur a measurement with a guess. |
+| **2. Structure for understanding** | The primary lever on reader cognitive load, with the depth kept intact. Intuition before implementation, terminology after the idea it names, one concept per paragraph. Each section answers the question the last one raised — but the questions drive the outline, not the page (answers stay declarative). Teaching pieces follow: concept → mental model → concrete example → why it matters → implementation → nuances → research caveats. |
+| **3. No hype** *(kept strict)* | Bans em-dash chains, rhetorical inversion, the "not X — it's Y" pivot, triadic drama, clickbait/aphoristic titles, intensifier adverbs, hype vocabulary, and "load-bearing"-style LLM-tell metaphors. |
+| **4. No self-sabotage** | The opposite failure: the imposter preamble ("I'm no expert but…"), false modesty, hedging a result you actually measured. Keep every caveat; never word the work down below what it deserves. |
+| **5. Claims are checkable** | Every empirical or factual claim that matters is verifiable in under a minute — a linked source, a number, code, or a chart. Don't blur a measurement with a guess. |
 
 The **pre-publish self-check** runs a mechanical grep pass (em-dashes, banned vocabulary, LLM tells) and a semantic read-through — best as a fresh-context subagent pass on a long post — and reports pass/fail per item before the post is called done.
 

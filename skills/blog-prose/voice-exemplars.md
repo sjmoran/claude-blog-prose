@@ -51,6 +51,38 @@ Not: "It wasn't the lock — it was serialization all along."
 
 Not: "In this section, we will discuss the reasons why the first fix did not work."
 
+## Structure for understanding (§1b)
+
+Implied question, declarative answer — the reader's next question drives the flow, but you never pose it on the page:
+
+> "The model never decodes the whole row. It reads a small header of byte offsets at the front of each row and jumps straight to the three fields it needs."
+
+Not: "So how does the model avoid decoding the whole row? The answer is byte offsets. But why does that help? Because…"
+
+Terminology after the idea, not before:
+
+> "You can pack the offsets into a fixed-size header so every row starts the same way and the reader always knows where to look. A layout like this — fixed header, variable body — is what people mean by a *framed* record."
+
+Not: "A framed record uses a fixed-length header to delimit a variable-length payload."
+
+The teaching progression in miniature — concept, mental model, example, why it matters, then implementation:
+
+> "A bloom filter answers one question: is this item *definitely not* in the set? Picture a row of light switches that start off; each item you add flips a few of them on, chosen by hashing. To check an item, you look at its switches — if any is still off, the item was never added. On a 10M-URL blocklist that's a few megabytes of switches instead of gigabytes of strings, and a lookup is three array reads. The cost is one-sided error: it can say 'maybe present' for something you never added. Here's the add and check in twelve lines."
+
+Misconception handled the moment it becomes relevant:
+
+> "It's tempting to read a 'maybe present' as 'probably present', but the filter says nothing about probability of membership — only that it can't rule the item out. A fresh filter with nothing added still returns 'maybe' for anything whose switches happen to be on from other items."
+
+Behaviour before implementation — a reader can stop at the first sentence:
+
+> "From the caller's side, `get(key)` returns the value or blocks until it exists. Underneath, that's a hash lookup that either hits or parks the caller on a per-key wait queue that the next `put` wakes — but you don't need any of that to use it correctly."
+
+Headings that narrate the piece on their own:
+
+> "What a bloom filter answers" → "The switch-board mental model" → "Why a few megabytes beats a few gigabytes" → "Adding and checking an item" → "The one-sided error, and when it bites" → "Sizing the filter for a target false-positive rate"
+
+Not (headings that tease or ask): "The magic of bloom filters" → "But there's a catch…" → "So how big should it be?"
+
 ## Anti-sensationalism — four levels (§2d)
 
 Sentence level — state the point, don't announce that it's interesting:

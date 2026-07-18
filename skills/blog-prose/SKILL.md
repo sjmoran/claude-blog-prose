@@ -7,20 +7,21 @@ description: Rules for writing, revising, or reviewing blog posts and other publ
 
 This skill ports the academic-prose voice to the blog. It keeps the parts that travel — the refusal to put rhetoric ahead of substance, and the habit of making claims checkable — and relaxes the academic machinery (no abstract word limits, no claims box, no "the remainder of this post is structured as follows", no Protocol paragraphs). A blog post should read like a clear person talking, not like a paper with the formatting filed off.
 
-Six rule sets, applied in this order whenever blog prose is written or edited:
+Seven rule sets, applied in this order whenever blog prose is written or edited:
 1. **Voice** — plain, first-person, conversational but precise (§1).
-2. **No hype, no machine-texture** — strip constructions that put rhetoric ahead of substance (§2), and the structural tells that make clean prose still read AI-generated: em-dash density, meta-narration scaffolding, compulsive both-sides balancing, marching cadence (§2e).
-3. **No self-sabotage** — keep every fact and caveat, but never word the work down more than it deserves (§2b).
-4. **No rhetorical-question scaffolding** — state the argument; don't keep prompting the reader with questions (§2c).
-5. **Calm, measured register, no sensationalism** — descriptive titles, proportionate claims, no manufactured drama or "breakthrough" framing, plus the four-level anti-sensationalism pass that removes staged stakes and suspense at the sentence, paragraph, heading, and conclusion levels (§2d).
-6. **Claims are checkable** — when a claim is empirical or factual, make it easy to verify (§3). This is evaluability, relaxed for the web.
+2. **Structure for understanding** — sequence the piece so depth arrives in an order a first-time reader can absorb: intuition before implementation, terminology after the idea it names, one concept per paragraph, each section answering the question the last one raised (§1b). This is the primary lever on reader cognitive load, and it preserves technical depth rather than trimming it — the depth simply arrives later in the arc.
+3. **No hype, no machine-texture** — strip constructions that put rhetoric ahead of substance (§2), and the structural tells that make clean prose still read AI-generated: em-dash density, meta-narration scaffolding, compulsive both-sides balancing, marching cadence (§2e).
+4. **No self-sabotage** — keep every fact and caveat, but never word the work down more than it deserves (§2b).
+5. **No rhetorical-question scaffolding** — state the argument; don't keep prompting the reader with questions (§2c). Note the deliberate seam with §1b: the reader's *implicit* next question drives the structure, but you answer it in declarative prose, not by posing the question on the page.
+6. **Calm, measured register, no sensationalism** — descriptive titles, proportionate claims, no manufactured drama or "breakthrough" framing, plus the four-level anti-sensationalism pass that removes staged stakes and suspense at the sentence, paragraph, heading, and conclusion levels (§2d).
+7. **Claims are checkable** — when a claim is empirical or factual, make it easy to verify (§3). This is evaluability, relaxed for the web.
 
-Plus one **mode layer**, applied on top of the six rule sets for a specific kind of post:
-7. **Builder's-map mode** — for posts that map a confusing technical area for other builders (how-X-systems-work explainers, which-tool-should-I-use landscapes, architecture and agentic-system walkthroughs), adopt the guided-design-walkthrough structure and framing in §4. It composes with §1–§3 and inherits every ban; it does not relax them. Skip it for a plain devlog or single-result post — those stay on §1–§3 alone.
+Plus one **mode layer**, applied on top of the seven rule sets for a specific kind of post:
+8. **Builder's-map mode** — for posts that map a confusing technical area for other builders (how-X-systems-work explainers, which-tool-should-I-use landscapes, architecture and agentic-system walkthroughs), adopt the guided-design-walkthrough structure and framing in §4. It is the landscape-and-architecture specialisation of the §1b progression: the same intuition-first, one-concept-at-a-time spine, plus the compare-on-axes and operational-realism framing. It composes with §1–§3 and inherits every ban; it does not relax them. Skip it for a plain devlog or single-result post — those stay on §1–§3 alone.
 
 Then run the **pre-publish self-check** (§5) before calling a post done. If an instruction in the conversation conflicts with a rule here, flag the conflict rather than silently overriding.
 
-Rationale (one line): a reader decides in the first paragraph whether to keep reading and whether to trust you; plain prose earns the first, checkable claims earn the second.
+Rationale (one line): a reader decides in the first paragraph whether to keep reading and whether to trust you; plain prose earns the first, checkable claims earn the second, and structure that adds depth in an order the reader can absorb earns the read all the way to the end.
 
 ## 1. Voice — plain, first-person, precise
 
@@ -29,7 +30,7 @@ Write the way a clear, honest person explains something they actually did or tho
 - **Person:** first-person singular — "I built", "I found that", "I was wrong about". Address the reader as "you" when it helps ("you might expect X; it turns out Y"). Use "we" only for genuinely shared work or when walking the reader through a derivation together.
 - **Openings:** start with the concrete thing — a problem you hit, a result that surprised you, a question worth an afternoon. No throat-clearing ("In today's fast-moving world…"), no abstract-style "This post studies…", and no slogan or aphorism (see §2). A short scene or a blunt statement of the result both work.
 - **Contractions and rhythm:** contractions are fine ("it's", "didn't"). Vary sentence length for rhythm — a short sentence after two long ones lands. But still aim for one main claim per sentence; rhythm is not an excuse for a clause pile-up.
-- **Intuition first, formalism optional:** lead with the plain-language reading; bring in notation, equations, or code only when they earn their place, and gloss them immediately. A blog reader will forgive you for skipping the proof; they won't forgive an unglossed symbol.
+- **Intuition first, formalism optional:** lead with the plain-language reading; bring in notation, equations, or code only when they earn their place, and gloss them immediately. A blog reader will forgive you for skipping the proof; they won't forgive an unglossed symbol. This is the sentence-level face of §1b's structural rule — intuition before implementation, the term after the idea it names.
 - **Show the thing:** prefer a concrete example, a code block, a chart, or a real number over an abstract description of it. "It dropped p99 from 800ms to 90ms" beats "it substantially improved latency".
 - **Structure by scent, not by signposting:** use descriptive headings so a scanner can navigate, but drop the academic "The remainder of this post is structured as follows" and "In this section we…". Let the headings and the first sentence under each do that work.
 - **Formatting for the screen:** bold for genuine emphasis or scannability is allowed in moderation (a paper bans this; a blog reader skims). Bullet lists for genuinely list-shaped content. Don't bold whole sentences, don't bullet prose that wants to be a paragraph, and don't let formatting substitute for a clear sentence.
@@ -38,6 +39,43 @@ Write the way a clear, honest person explains something they actually did or tho
 - **Spelling:** pick one variant (British or American) and hold it with zero mixing. Default to British unless the venue says otherwise.
 
 Do not: open with a dictionary definition or a rhetorical question stack; pad with qualifiers; chain subordinate clauses; write a SEO-keyword-stuffed paragraph; adopt LinkedIn-influencer or press-release register.
+
+## 1b. Structure for understanding — lower the reader's load, keep the depth (mandatory)
+
+§1 governs how a sentence sounds; this governs how the whole piece is sequenced. The objective is to reduce the reader's cognitive load while preserving technical depth — not to make the material shallower. The move is to introduce depth in an order a first-time reader can absorb: one concept at a time, intuition before machinery, terminology after the idea it names. Technical accuracy and architectural depth stay; what changes is the order and pacing in which they arrive. The paragraph-level rules below apply to every post. The full teaching progression applies to explanatory or tutorial articles and scales down for a short devlog, opinion piece, or announcement (those keep the paragraph-level rules but not the seven-beat arc). For a landscape or architecture post, §4 is the specialised form of this pillar.
+
+- **Lead with intuition, name the term afterward.** Give the plain-language reading and a mental model the reader can hold before you introduce notation, an equation, code, or a named concept. Introduce a term only once the reader understands the thing it labels — the word is a handle for an idea they now have, not a prerequisite for it. (§1's intuition-first bullet stated in full; §4's "plain entry before jargon" is this same rule for landscape posts.)
+
+- **Separate what a thing does from how it does it.** Describe observable behaviour before, and separately from, internal implementation. A reader who only needs to know *what* a component does should be able to stop before the internals; a reader who needs the mechanism reads on. Blurring the two forces everyone to load the implementation just to understand the behaviour. Behaviour is usually the intuition; implementation is the machinery that follows it.
+
+- **Follow the teaching progression whenever the piece is explaining something.** For an article whose job is to teach an idea, the default arc through each major concept is:
+
+  **concept → mental model → concrete example → why it matters → implementation → nuances → research caveats.**
+
+  Start with the bare concept in plain words; give a mental model or analogy the reader can reason with; ground it in one concrete example — a real number, a small code block, a worked case — before generalising; say why it matters (what it lets you do, or what breaks without it) as a plain statement, never a "why does this matter?" heading (§2d); *then* show the implementation; then the nuances and edge cases; then the honest research caveats and limits. Depth lives in the later beats, which is how the arc keeps early paragraphs light without making the piece shallow. Not every idea needs all seven beats or in lockstep — but a jump straight from concept to implementation has almost certainly skipped the intuition the reader needed.
+
+- **Layer complexity; don't step from beginner to expert in one move.** Introduce one new idea at a time and let it settle before the next depends on it. If a paragraph assumes something you haven't built yet, move it or build the missing step first. A reader should never have to hold two unexplained things at once.
+
+- **Summarise before you add complexity.** At each real threshold — before a section that leans on everything so far — consolidate the idea in a sentence or two, then push forward. This is where deliberate repetition earns its keep. It is not the tidy-summary-per-paragraph tic §2e bans: a recap belongs at a genuine complexity step and must consolidate, not decorate.
+
+- **Repeat a concept only when the repetition adds understanding.** Restate an important idea when the restatement consolidates it, reframes it, or connects it to something new — each repeat teaching a little more than the last. A recap that only re-says the words is the §2e cadence tell; cut it.
+
+- **Each paragraph holds one concept, and every paragraph earns its place.** Keep a paragraph to a single idea, typically two to five sentences. Every paragraph must do one of five jobs: introduce, explain, contrast, motivate, or summarise. If a paragraph does none of these, cut it. (Length is typical, not a quota — §1 and §2e still want varied, lumpy rhythm; a one-line paragraph that lands a point is fine.)
+
+- **Let the reader's next question pull the piece forward — but answer it in statements.** The strongest technical writing reads as if each section answers the question the previous one naturally raised, so the reader always knows why they're reading on. Build the outline that way: every section should leave a specific question that the next one answers. But realise that momentum in *declarative* prose. Open a section by stating the answer or naming the topic, not by posing "So what happens next?". This is the seam with §2c and §2d: the question-driven *structure* is the goal; the question-driven *surface* is the banned LLM tell. The §2c budget still holds — at most one or two genuine questions in a whole post, only where a human author would really pause to ask one.
+  - Bad (question on the page): "So how does the model avoid decoding the whole row? The answer is byte offsets." → Good (implicit question, declarative answer): "The model never decodes the whole row. It reads a small header of byte offsets and jumps straight to the three fields it needs."
+
+- **Orient the reader with transitions that mark a real move.** A short connective that says where the reader is — "Next," "We'll return to this," "In other words," "Having established X, we can now Y," a one-line recap before a turn — is good writing; use them continuously. Keep each honest: "In other words" must precede a genuine restatement that adds clarity, and a transition must introduce a real conceptual step. The §2e ban is on scaffolding that *announces explaining instead of explaining* ("Here's the part that makes this worth reading"). Marking a step is good; narrating that you're about to teach is cut. The §2e em-dash cap still applies to these connectives. (Same reconciliation §4 makes for its guide phrases.)
+
+- **Address a misconception the moment it becomes relevant.** When a natural but wrong reading of what you just said would take root, name it and correct it right there — not in a later "common mistakes" appendix, and not before the reader knows enough to hold the misconception. State it plainly ("It's tempting to read X as Y; it isn't, because…"), fix it, move on.
+
+- **Headings tell the story on their own.** A reader skimming only the headings should get a coherent, correct outline of the argument. Each heading names what its section establishes (declarative), reads as the next step after the one before, and never teases a withheld payload (§2d Level 3) or poses a question (§2c). If the headings alone don't narrate the piece, the structure is wrong, not just the wording.
+
+- **Figures support the narrative; they don't replace it.** A visual is evidence for a point the prose is already making, not a substitute for making it. Set up in words what the figure shows and what to look for; the reader should grasp the point from the prose and see it confirmed in the figure. Keep visuals strong — a diagram, an axis chart, or an architecture sketch that carries real structure is worth building — but never let one carry a point the text never states. (This generalises §4's visuals rule to every post and pairs with §3: a figure is one of the checkable artifacts.)
+
+- **Prefer precise, simple English.** Say it in the plainest words that are still exact. Simpler wording almost always reads as *more* competent; academic hedging and corporate register (§2's hype vocabulary) read as less. Cut adjectives that add heat but no information — the credibility comes from the specific, checkable fact, so let it do the work an intensifier was reaching for. (This is §2 and §2d restated as a positive.)
+
+Read-aloud test: read only the headings — do they narrate the piece? Then read it as a first-time reader — does each section answer the question the last one raised, does every term arrive after its idea, does any paragraph make you hold two unexplained things at once, and does every paragraph introduce, explain, contrast, motivate, or summarise? If a section jumps from concept to implementation with no intuition between, or a heading poses a question or teases a payload, restructure.
 
 ## 2. No hype (mandatory — kept strict from the paper rules)
 
@@ -88,6 +126,8 @@ Guidance:
 - Do not use repeated "the question is…" phrasing.
 - Do not set up a paragraph by asking a question and immediately answering it, unless the question is genuinely useful.
 - Prefer direct claims: "This estimates…", "This separates…", "This fails when…", "The decision depends on…".
+
+**Reconciliation with §1b.** §1b wants each section to answer the question the previous one naturally raised — that is the reader's *implicit* question driving the structure, and it is encouraged. This rule bans the *surface* form: posing that question on the page and then answering it. Keep the question-driven outline; write the answers as declarative topic sentences. The two rules point the same way — a piece whose structure is genuinely question-driven rarely needs to print the questions at all.
 
 ## 2d. Calm, measured register & anti-sensationalism (mandatory for technical essays)
 
@@ -180,10 +220,10 @@ This is a mode layer, not a separate voice. It composes with §1–§3 and inher
 
 The target is the voice of a practical builder walking another builder through the space: approachable, lightly conversational, and useful — but not chatty, promotional, or over-polished. It should read as a guided design walkthrough, not an academic survey, a vendor whitepaper, a thought-leadership essay, or a hype post.
 
-The default arc, applied to the post as a whole and often to each section: **plain entry → naive path → failure modes → trade-offs → design families → operational realism → modest conclusion.**
+The default arc, applied to the post as a whole and often to each section: **plain entry → naive path → failure modes → trade-offs → design families → operational realism → modest conclusion.** This is the §1b teaching progression (concept → mental model → concrete example → why it matters → implementation → nuances → research caveats) specialised for a design-space post: the naive path is the concrete example, the failure modes and trade-offs are the why-it-matters and nuances, and the modest conclusion is the research-caveat beat. Everything §1b says about intuition-first, one-concept paragraphs, and question-driven-but-declarative momentum holds here too.
 
 ### Plain entry before jargon
-- Give the plain-language version of the problem and a simple mental model first. Name the jargon only after the reader understands the underlying idea.
+- This is §1b's rule (lead with intuition, name the term after) applied to a landscape post: give the plain-language version of the problem and a simple mental model first, and name the jargon only once the reader understands the underlying idea.
 - Bad: "Stateless inference requires externalised persistence layers." Better: "LLMs don't remember anything between calls. That's what people mean when they say they're stateless."
 
 ### Progressive discovery as the backbone
@@ -223,7 +263,7 @@ The default arc, applied to the post as a whole and often to each section: **pla
 - **Reconciliation with §2c and §2e:** these phrases are permitted because they mark genuine walkthrough steps, not because the scaffolding bans are lifted. Keep them sparse (don't open three paragraphs in a row with one), never use them to announce that you're about to explain instead of explaining, and don't let "your first thought may be…" grow into a rhetorical-question stack (§2c). The §2e em-dash cap and meta-narration ban still apply. If a guide phrase isn't introducing a real step in the walk, cut it.
 
 ### Contrast, uncertainty, short paragraphs
-- Prefer short, skimmable paragraphs, each doing one job: introduce the idea, give the example, name the failure mode, state the trade-off, or draw the practical implication.
+- Short, single-concept paragraphs are the §1b default; here each does one of these jobs: introduce the idea, give the example, name the failure mode, state the trade-off, or draw the practical implication.
 - Explain through contrast pairs: simple vs complex, fast-to-start vs hard-to-debug, abstraction vs control, vector-first vs graph-first, cloud vs self-hosted, high-agency vs tight-workflow, benchmark result vs production reliability.
 - Keep uncertainty visible: "seems to", "may", "likely", "from what I've seen", "I haven't tested this thoroughly", "you'll need to validate this yourself". Used honestly this builds trust; it does not conflict with §2b, whose ban is on wording your work *down*, not on stating genuine limits.
 
@@ -253,11 +293,13 @@ Read-aloud test: does the post read like a builder who has actually worked in th
 9. Spelling consistent with the chosen variant throughout — no mixing.
 10. Builder's-map check (§4) — only for landscape, tool-comparison, architecture, or agentic-system posts; skip for a plain devlog or single-result post. Confirm: the post follows the arc (plain entry → naive path → failure modes → trade-offs → design families → operational realism → modest conclusion); jargon is introduced only after a plain-language mental model; each option is explained by what it solves, what it breaks, and its new trade-off (nothing is framed as simply "better"); comparisons use axes and design families, not rankings, with table-stakes separated from differentiators; the operational realities that apply (cost, latency, scale, security, observability, database growth, maintainability, debugging, evaluation, DX, migration) are visible; popularity is treated as a signal, not proof of fitness; abstraction is shown as a trade-off; for agentic posts the agency assumption is made explicit; and the conclusion leaves a map with its uncertain edges named, not a verdict.
 
+11. Structure & cognitive-load check (§1b) — for every post. Read the headings alone: do they narrate a coherent, correct outline, each one a declarative next step, none posing a question or teasing a payload? Then read as a first-time reader: does each section answer the question the previous one raised, without a literal rhetorical question doing that work (§2c)? Does intuition precede every piece of implementation, and does each term arrive only after the idea it names? Is any paragraph carrying more than one concept, or failing to introduce/explain/contrast/motivate/summarise — if so, split or cut it. For a teaching or tutorial piece, also confirm: the progression (concept → mental model → concrete example → why it matters → implementation → nuances → research caveats) holds where it applies; complexity is layered rather than jumped; misconceptions are handled where they arise, not deferred; observable behaviour is separated from internal implementation; and every figure supports a point the prose already makes rather than replacing it.
+
 Report the outcome of this checklist to the user explicitly — pass/fail per item — before calling the post finished.
 
 ## One-line summary
 
-Write like a clear person talking — first person, concrete, one claim per sentence, intuition before formalism — strip every construction that puts rhetoric ahead of substance, keep the register calm and measured (descriptive titles, proportionate claims, no manufactured drama), word your work neither above nor below what it deserves, and make every claim that matters checkable in under a minute. For a post that maps a technical design space, add the builder's-map layer (§4): a practical builder walking a peer through the arc plain entry → naive path → failure modes → trade-offs → design families → operational realism → modest conclusion — comparing on axes rather than rankings, keeping the operational costs visible, and ending on a map, not a verdict.
+Write like a clear person talking — first person, concrete, one claim per sentence, intuition before formalism — and structure the piece to lower the reader's load without losing depth: each section answers the question the last one naturally raised (answered in statements, not posed as questions), every term arrives after the idea it names, and each paragraph holds one concept. Strip every construction that puts rhetoric ahead of substance, keep the register calm and measured (descriptive titles, proportionate claims, no manufactured drama), word your work neither above nor below what it deserves, and make every claim that matters checkable in under a minute. For a post that maps a technical design space, add the builder's-map layer (§4): a practical builder walking a peer through the arc plain entry → naive path → failure modes → trade-offs → design families → operational realism → modest conclusion — comparing on axes rather than rankings, keeping the operational costs visible, and ending on a map, not a verdict.
 
 ## Relationship to academic-prose
 
