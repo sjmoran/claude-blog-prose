@@ -4,7 +4,7 @@
 
 ![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-skill-d97757)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
-![Status](https://img.shields.io/badge/status-v0.1-brightgreen)
+![Status](https://img.shields.io/badge/status-v0.2-brightgreen)
 
 LLMs write blog posts in a recognisable register: em-dash drama, triadic punchlines, "it's not X — it's Y" pivots, "delve", "leverage", "game-changer", and a title engineered to withhold its own point. Readers spot it in a sentence and stop trusting the post. `blog-prose` is a set of rules that strips all of that out, keeps your work honest in both directions (no overselling, no imposter-voice underselling), and makes every factual claim checkable.
 
