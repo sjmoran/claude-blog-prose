@@ -34,9 +34,10 @@ The headline rule sets, applied in order (the skill also carries the calm-regist
 |---|---|
 | **1. Voice** | Plain, first-person, precise. Open on the concrete thing. Show the artifact. Mark opinion as opinion. Structure by descriptive headings, not "in this section we…". |
 | **2. Structure for understanding** | The primary lever on reader cognitive load, with the depth kept intact. Intuition before implementation, terminology after the idea it names, one concept per paragraph. Each section answers the question the last one raised — but the questions drive the outline, not the page (answers stay declarative). Teaching pieces follow: concept → mental model → concrete example → why it matters → implementation → nuances → research caveats. |
-| **3. No hype** *(kept strict)* | Bans em-dash chains, rhetorical inversion, the "not X — it's Y" pivot, triadic drama, clickbait/aphoristic titles, intensifier adverbs, hype vocabulary, and "load-bearing"-style LLM-tell metaphors. |
-| **4. No self-sabotage** | The opposite failure: the imposter preamble ("I'm no expert but…"), false modesty, hedging a result you actually measured. Keep every caveat; never word the work down below what it deserves. |
-| **5. Claims are checkable** | Every empirical or factual claim that matters is verifiable in under a minute — a linked source, a number, code, or a chart. Don't blur a measurement with a guess. |
+| **3. Intellectual stakes** | For posts that report a result or a change of mind. Establish what experts believed before, and let significance come from that contrast and the evidence, not from adjectives. Keep observation, inference, and prediction apart; separate discovery from understanding; show genuine belief updates; state the strongest objection fairly; reach a strong conclusion only once the evidence has earned it. |
+| **4. No hype** *(kept strict)* | Bans em-dash chains, rhetorical inversion, the "not X — it's Y" pivot, triadic drama, clickbait/aphoristic titles, intensifier adverbs, hype vocabulary, and "load-bearing"-style LLM-tell metaphors. |
+| **5. No self-sabotage** | The opposite failure: the imposter preamble ("I'm no expert but…"), false modesty, hedging a result you actually measured. Keep every caveat; never word the work down below what it deserves. |
+| **6. Claims are checkable** | Every empirical or factual claim that matters is verifiable in under a minute — a linked source, a number, code, or a chart. Don't blur a measurement with a guess. |
 
 The **pre-publish self-check** runs a mechanical grep pass (em-dashes, banned vocabulary, LLM tells) and a semantic read-through — best as a fresh-context subagent pass on a long post — and reports pass/fail per item before the post is called done.
 
