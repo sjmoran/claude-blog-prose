@@ -6,7 +6,7 @@
   },
   "metadata": {
     "description": "Clear, honest blog prose — a plain first-person voice, no-hype rules that strip rhetorical and marketing constructions, no-self-sabotage rules against the imposter voice, and a checkable-claims rule that keeps every factual claim verifiable in under a minute",
-    "version": "0.2.1"
+    "version": "0.2.2"
   },
   "plugins": [
     {
