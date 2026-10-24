@@ -4,7 +4,7 @@ A Claude Code skill for writing blog posts that read as if a person wrote them.
 
 ![Claude Code Skill](https://img.shields.io/badge/Claude%20Code-skill-d97757)
 ![License: MIT](https://img.shields.io/badge/license-MIT-blue)
-![Status](https://img.shields.io/badge/status-v0.2-brightgreen)
+![Status](https://img.shields.io/badge/status-v0.3-brightgreen)
 
 LLMs write blog posts in a recognisable register: em-dash drama, triadic punchlines, "it's not X — it's Y" pivots, "delve", "leverage", "game-changer", and a title engineered to withhold its own point. Many readers now recognise it within a sentence, and in my experience that costs the post their trust. `blog-prose` is a set of rules that strips all of that out, keeps your work honest in both directions (no overselling, no imposter-voice underselling), and makes every factual claim checkable.
 
@@ -41,10 +41,11 @@ The rules, in the order they appear in [`SKILL.md`](skills/blog-prose/SKILL.md):
 | **§2b No self-sabotage** | The opposite failure: the imposter preamble ("I'm no expert but…"), false modesty, hedging a result you actually measured. Keep every caveat; never word the work down below what it deserves. |
 | **§2c–§2e Calm register** | No rhetorical-question scaffolding, no manufactured suspense or dramatic headings, and a pass for the structural tells that word lists miss: em-dash density, meta-narration, reflexive both-sides framing. Remove defensive qualifications that add no information; retain meaningful limitations where they matter. |
 | **§3 Claims are checkable** | Every empirical or factual claim that matters is verifiable in under a minute: a linked source, a number, code, or a chart. Don't blur a measurement with a guess. |
+| **§3b Readability** | Makes the takeaways obvious on a first read. Write from a short takeaway list, open with one concrete case, keep coined labels few, put each finding before its caveats, state each caveat once, and finish with a cold-read test by a fresh agent. |
 | **§4 Builder's map** | For landscape and architecture posts: plain entry, naive path, failure modes, trade-offs, design families, operational realism, modest conclusion. |
 | **§4b Research synthesis** | For posts on how an idea or field developed: build an evidence map and a thesis first, tell the history as causation, group papers by argument, and calibrate certainty throughout. |
 
-The 14-item **pre-publish self-check** (§5) runs a mechanical grep pass (em-dashes, banned vocabulary, LLM tells) and a semantic read-through, which works best as a fresh-context subagent pass on a long post. It reports pass/fail per item before the post is called done.
+The 15-item **pre-publish self-check** (§5) runs a mechanical grep pass (em-dashes, banned vocabulary, LLM tells) and a semantic read-through, which works best as a fresh-context subagent pass on a long post. It reports pass/fail per item before the post is called done.
 
 ## Install
 
